@@ -3,7 +3,7 @@ const multer = require("multer");
 const path = require("path");
 const Blog = require("../models/blog");
 const Comment = require("../models/comment");
-import { marked } from "marked";
+const { marked } = require("marked");
 
 const router = Router();
 
