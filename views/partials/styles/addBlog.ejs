@@ -1,44 +1,60 @@
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
   body {
-    background: linear-gradient(to right, #d9a7c7, #fffcdc);
-    font-family: 'Montserrat', sans-serif;
+    background-color: #0d1117;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: #c9d1d9;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+    padding: 40px 20px;
   }
 
   .glass-form {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
     padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     width: 100%;
   }
 
+  .glass-form h3 {
+    color: #f0f6fc;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
   .glass-form label {
     font-weight: 600;
+    color: #c9d1d9;
   }
 
   .glass-form input,
   .glass-form textarea {
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    background-color: #161b22;
+    color: #f0f6fc;
+    border-radius: 8px;
+    border: 1px solid #30363d;
     padding: 10px;
-    transition: box-shadow 0.3s ease;
+    width: 100%;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
   }
 
   .glass-form input:focus,
   .glass-form textarea:focus {
-    box-shadow: 0 0 10px #d291bc;
-    border-color: #d291bc;
+    border-color: #58a6ff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.2);
   }
 
   .glass-form textarea {
@@ -46,22 +62,60 @@
     resize: vertical;
   }
 
-  .btn-primary {
-    background-color: #ff5e62;
+  /* Choose File Button Custom Styling */
+  .glass-form input[type="file"] {
+    padding: 10px;
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px dashed #30363d;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .glass-form input[type="file"]::-webkit-file-upload-button {
+    background-color: #238636;
+    color: #fff;
     border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
     font-weight: 600;
-    letter-spacing: 1px;
-    transition: background 0.3s ease;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .glass-form input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #2ea043;
+  }
+
+  .btn-primary {
+    background-color: #238636;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    transition: background-color 0.3s ease;
   }
 
   .btn-primary:hover {
-    background-color: #ff999c;
+    background-color: #2ea043;
+  }
+
+  .alert-danger {
+    background-color: #da3633;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 16px;
+    text-align: center;
   }
 
   @media (max-width: 576px) {
     .glass-form {
       padding: 25px;
-      border-radius: 15px;
+      border-radius: 14px;
     }
   }
 </style>

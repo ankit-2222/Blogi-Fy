@@ -1,110 +1,78 @@
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<!-- GitHub Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
   body {
-    background: linear-gradient(to right, #d9a7c7, #fffcdc);
-    font-family: 'Montserrat', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     margin: 0;
     padding: 0;
   }
 
-  h5.card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+  .container {
+    padding-top: 20px;
   }
 
   .card {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgba(1, 4, 9, 0.6);
+  }
+
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
   }
 
   .card-body {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  /* View Button Styling */
-  #view-btn {
-    position: relative;
-    text-decoration: none;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 7px;
-    border: 1px solid rgb(61, 106, 255);
-    font-size: 14px;
-    text-transform: uppercase;
+  .card-title {
+    font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: 2px;
-    background: transparent;
-    color: #000000;
-    overflow: hidden;
-    box-shadow: 0 0 0 0 transparent;
-    transition: all 0.2s ease-in;
+    color: #e6edf3;
+    margin-bottom: 1rem;
+  }
+
+  /* View Button */
+  #view-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #238636;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    border: none;
   }
 
   #view-btn:hover {
-    color: #ffffff;
-    background: rgb(61, 106, 255);
-    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
-    transition: all 0.2s ease-out;
+    background-color: #2ea043;
   }
 
-  #view-btn:hover::before {
-    animation: sh02 0.5s 0s linear;
+  a {
+    color: #58a6ff;
   }
 
-  #view-btn::before {
-    content: '';
-    display: block;
-    width: 0px;
-    height: 86%;
-    position: absolute;
-    top: 7%;
-    left: 0%;
-    opacity: 0;
-    background: #fff;
-    box-shadow: 0 0 50px 30px #fff;
-    transform: skewX(-20deg);
-  }
-
-  @keyframes sh02 {
-    from {
-      opacity: 0;
-      left: 0%;
-    }
-
-    50% {
-      opacity: 1;
-    }
-
-    to {
-      opacity: 0;
-      left: 100%;
-    }
-  }
-
-  #view-btn:active {
-    box-shadow: 0 0 0 0 transparent;
-    transition: box-shadow 0.2s ease-in;
-  }
-
-  .card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    height: 200px;
-    object-fit: cover;
+  a:hover {
+    color: #1f6feb;
+    text-decoration: underline;
   }
 
   @media (max-width: 576px) {
@@ -114,7 +82,73 @@
 
     #view-btn {
       font-size: 12px;
-      padding: 8px 16px;
+      padding: 6px 12px;
+    }
+
+    .card-img-top {
+      height: 140px;
     }
   }
+  
+  /* Navbar Fix: GitHub-Inspired */
+nav.navbar {
+  width: 100%;
+  background-color: rgba(22, 27, 34, 0.9); /* transparent dark */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #30363d;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f0f6fc !important;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #c9d1d9;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #58a6ff;
+}
+
+.navbar-toggler {
+  background-color: #21262d;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(200,200,200,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu-dark {
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
 </style>

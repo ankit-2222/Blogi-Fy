@@ -1,41 +1,44 @@
-<nav class="navbar navbar-expand-lg bg-transparent sticky-top shadow-sm py-3" style="backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm py-3 glossy-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center gap-2 text-black fw-bold" href="/">
+    <a class="navbar-brand d-flex align-items-center gap-2 text-light fw-semibold" href="/">
       <img src="/images/logo.png" alt="Logo" width="40" height="40" class="rounded-circle shadow-sm">
-      <span style="font-family: 'Playfair Display', serif;">Blogi-Fy</span>
+      <span style="font-family: 'Segoe UI', sans-serif; font-weight: 600;">Blogi-Fy</span>
     </a>
 
-    <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-      <ul class="navbar-nav align-items-center gap-2">
+      <ul class="navbar-nav align-items-center gap-3">
         <li class="nav-item">
-          <a class="nav-link text-black fw-semibold" href="/">Home</a>
+          <a class="nav-link custom-link" href="/">Home</a>
         </li>
 
         <% if (locals.user) { %>
           <li class="nav-item">
-            <a class="nav-link text-black fw-semibold" href="/blog/add-new">Add Blog</a>
+            <a class="nav-link custom-link" href="/blog/add-new">Add Blog</a>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2 text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="<%= user.profileImageURL %>" width="32" height="32" class="rounded-circle shadow-sm" style="object-fit: cover;">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2 custom-link" href="#"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="<%= user.profileImageURL %>" width="32" height="32"
+                   class="rounded-circle shadow-sm" style="object-fit: cover;">
               <span><%= user.fullName %></span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow">
               <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
             </ul>
           </li>
-
         <% } else { %>
           <li class="nav-item">
-            <a class="nav-link text-black fw-semibold" href="/user/signup">Create Account</a>
+            <a class="nav-link custom-link" href="/user/signup">Create Account</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black fw-semibold" href="/user/signin">Signin</a>
+            <a class="nav-link custom-link" href="/user/signin">Signin</a>
           </li>
         <% } %>
       </ul>

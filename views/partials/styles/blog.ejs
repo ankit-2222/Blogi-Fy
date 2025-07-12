@@ -1,100 +1,169 @@
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 <style>
-        body {
-            background: linear-gradient(to right, #d9a7c7, #fffcdc);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+  }
 
-        h1, h3 {
-            font-family: 'Playfair Display', serif;
-        }
+  h1, h2, h3, h4, h5 {
+    color: #f0f6fc;
+  }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            color: #000;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+  .glass-card {
+    background: rgba(22, 27, 34, 0.6);
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(1, 4, 9, 0.4);
+  }
 
-        .glass-card:hover {
-            transform: scale(1.01);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-        }
+  .glass-card:hover {
+    box-shadow: 0 10px 40px rgba(1, 4, 9, 0.6);
+  }
 
-        .glass-card img {
-            border-radius: 15px;
-        }
+  .markdown-body {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
 
-        pre {
-            white-space: pre-wrap;
-            word-break: break-word;
-            font-size: 1.05rem;
-        }
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3 {
+    color: #f0f6fc;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 6px;
+    margin-top: 24px;
+  }
 
-        .author-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            padding: 10px 15px;
-        }
+  .markdown-body pre {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #f0f6fc;
+    padding: 14px;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
 
-        .author-box img {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+  .markdown-body code {
+    background-color: #161b22;
+    color: #58a6ff;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
 
-        .author-box img:hover {
-            transform: scale(1.1);
-        }
+  .author-box img,
+.comment-header img,
+.rounded-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #30363d;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
 
-        .comment-box {
-            background-color: #ffffffd9;
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
+.author-box img:hover,
+.comment-header img:hover {
+  transform: scale(1.1);
+}
 
-        .comment-box:hover {
-            transform: translateY(-3px);
-        }
+  .comment-box {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
 
-        textarea:focus {
-            box-shadow: 0 0 10px #ffb347;
-            border-color: #ffb347;
-        }
+  textarea.form-control {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px;
+  }
 
-        button.btn-primary {
-            background-color: #ff7e5f;
-            border: none;
-        }
+  textarea.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+    border-color: #58a6ff;
+  }
 
-        button.btn-primary:hover {
-            background-color: #feb47b;
-        }
+  .btn-primary {
+    background-color: #238636;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
 
-        .comment-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+  .btn-primary:hover {
+    background-color: #2ea043;
+  }
 
-        .rounded-img {
-            border-radius: 50%;
-            object-fit: cover;
-        }
+  .alert-warning {
+    background-color: rgba(255, 204, 0, 0.2);
+    color: #e3b341;
+    border: 1px solid #e3b341;
+    padding: 12px 16px;
+    border-radius: 10px;
+  }
+
+  /* Navbar Fix: GitHub-Inspired */
+nav.navbar {
+  width: 100%;
+  background-color: rgba(22, 27, 34, 0.9); /* transparent dark */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #30363d;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f0f6fc !important;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #c9d1d9;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #58a6ff;
+}
+
+.navbar-toggler {
+  background-color: #21262d;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(200,200,200,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu-dark {
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
 </style>

@@ -5,6 +5,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const Blog = require("./models/blog");
+const marked = require("marked");
 
 const userRout = require("./routes/user");
 const blogRout = require("./routes/blog");
@@ -14,12 +15,7 @@ const {
 } = require("./middlewares/authentication");
 
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    tls: true,
-    tlsAllowInvalidCertificates: true,
-  })
+  .connect(process.env.MONGO_URL)
   .then((e) => console.log("MongoDB connected Successfully..."));
 
 const app = express();
