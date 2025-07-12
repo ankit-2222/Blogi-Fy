@@ -7,11 +7,11 @@
     color: #c9d1d9;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    padding: 20px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
   }
 
   .glass-form {
@@ -24,12 +24,14 @@
     box-shadow: 0 8px 32px rgba(1, 4, 9, 0.6);
     max-width: 420px;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .glass-form label {
     font-weight: 600;
     margin-bottom: 6px;
     color: #f0f6fc;
+    display: block;
   }
 
   .glass-form input,
@@ -44,6 +46,7 @@
     width: 100%;
     font-size: 0.95rem;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
   }
 
   .glass-form input:focus,
@@ -52,6 +55,11 @@
     outline: none;
     border-color: #58a6ff;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+  }
+
+  .glass-form textarea {
+    min-height: 120px;
+    resize: vertical;
   }
 
   .glass-form input[type="file"] {
@@ -70,6 +78,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-right: 10px;
   }
 
   .glass-form input[type="file"]::-webkit-file-upload-button:hover {
@@ -82,7 +91,7 @@
     color: white;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 10px 16px;
+    padding: 12px;
     border-radius: 10px;
     width: 100%;
     transition: background-color 0.3s ease;
@@ -92,9 +101,34 @@
     background-color: #2ea043;
   }
 
+  /* Responsive Enhancements */
   @media (max-width: 576px) {
     .glass-form {
       padding: 25px 20px;
+    }
+
+    .glass-form input,
+    .glass-form textarea,
+    .glass-form select {
+      font-size: 0.9rem;
+      padding: 9px 12px;
+    }
+
+    .btn-primary {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .glass-form {
+      padding: 32px 50px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .glass-form {
+      padding: 35px 60px;
     }
   }
 </style>

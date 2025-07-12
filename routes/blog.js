@@ -5,6 +5,11 @@ const Blog = require("../models/blog");
 const Comment = require("../models/comment");
 const { marked } = require("marked");
 
+marked.setOptions({
+  headerIds: false,
+  mangle: false,
+});
+
 const router = Router();
 
 const storage = multer.diskStorage({

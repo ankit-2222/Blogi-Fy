@@ -11,7 +11,7 @@
   }
 
   .container {
-    padding-top: 20px;
+    padding: 20px;
   }
 
   .card {
@@ -19,6 +19,9 @@
     border: 1px solid #30363d;
     border-radius: 6px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .card:hover {
@@ -31,6 +34,7 @@
     object-fit: cover;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    width: 100%;
   }
 
   .card-body {
@@ -38,6 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
   }
 
   .card-title {
@@ -75,6 +80,93 @@
     text-decoration: underline;
   }
 
+  /* Navbar Fix: GitHub-Inspired */
+  nav.navbar {
+    width: 100%;
+    background-color: rgba(22, 27, 34, 0.9);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #30363d;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f0f6fc !important;
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    color: #c9d1d9;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #58a6ff;
+  }
+
+  .navbar-toggler {
+    background-color: #21262d;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(200,200,200,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .dropdown-menu-dark {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+  }
+
+  /* Responsive Grid for Cards */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .col-sm-6, .col-md-4, .col-lg-3 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    .col-sm-6 {
+      flex: 1 1 48%;
+      max-width: 48%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .col-md-4 {
+      flex: 1 1 31%;
+      max-width: 31%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .col-lg-3 {
+      flex: 1 1 23%;
+      max-width: 23%;
+    }
+  }
+
+  /* Extra Responsive Tweaks */
   @media (max-width: 576px) {
     .card-title {
       font-size: 1rem;
@@ -88,67 +180,20 @@
     .card-img-top {
       height: 140px;
     }
+
+    .navbar-brand {
+      font-size: 1rem;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding-top: 10px;
+    }
+
+    .container {
+      padding: 16px 12px;
+    }
   }
-  
-  /* Navbar Fix: GitHub-Inspired */
-nav.navbar {
-  width: 100%;
-  background-color: rgba(22, 27, 34, 0.9); /* transparent dark */
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid #30363d;
-}
-
-.navbar-brand {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #f0f6fc !important;
-}
-
-.navbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.navbar-nav .nav-item .nav-link {
-  color: #c9d1d9;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-  color: #58a6ff;
-}
-
-.navbar-toggler {
-  background-color: #21262d;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(200,200,200,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-.dropdown-menu-dark {
-  background-color: #21262d;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    gap: 10px;
-  }
-}
-
 </style>
