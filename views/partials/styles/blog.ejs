@@ -1,0 +1,100 @@
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+        body {
+            background: linear-gradient(to right, #d9a7c7, #fffcdc);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            color: #000;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .glass-card img {
+            border-radius: 15px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 1.05rem;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 10px 15px;
+        }
+
+        .author-box img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .author-box img:hover {
+            transform: scale(1.1);
+        }
+
+        .comment-box {
+            background-color: #ffffffd9;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .comment-box:hover {
+            transform: translateY(-3px);
+        }
+
+        textarea:focus {
+            box-shadow: 0 0 10px #ffb347;
+            border-color: #ffb347;
+        }
+
+        button.btn-primary {
+            background-color: #ff7e5f;
+            border: none;
+        }
+
+        button.btn-primary:hover {
+            background-color: #feb47b;
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rounded-img {
+            border-radius: 50%;
+            object-fit: cover;
+        }
+</style>
