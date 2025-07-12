@@ -5,7 +5,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const Blog = require("./models/blog");
-const marked = require("marked");
 
 const userRout = require("./routes/user");
 const blogRout = require("./routes/blog");
