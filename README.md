@@ -159,12 +159,3 @@ Let’s build a better blog platform together! 💡
 > Built with 💚 using Node.js, Express, MongoDB, and EJS
 
 ```
-
----
-
-Would you like me to:
-- ✅ Save this as `README.md` in your extracted `BLOG` directory?
-- 📁 Also generate a `.env.example` file for easy setup?
-
-Let me know!
-```
